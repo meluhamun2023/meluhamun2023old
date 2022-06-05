@@ -15,20 +15,32 @@
             background-size: cover;
             background-attachment: fixed;
         }
+        .HeadingText {
+            color: white;
+            text-decoration-style: solid;
+        }
     </style>
     <head>
         <title>Portfolio</title>
         <meta name="Description" content="lol hi">
     </head>
-    <div class = "text">
+    <div class = "HeadingText">
         <h1>Portfolio</h1>
+        <br>
+        <h2>The verified website for Deadwoodx Portfolio</h2>
     </div>
-    <div class = "box">
-        <button onclick="changecolor()">Contact</button>
+    <div class = "Buttons">
+        <button onclick="opendiscord()">Discord</button>
+        <br>
+        <button onclick="openforum()">Devforum</button>
     </div>
     <script>
-        function changecolor(){
+        function openforum(){
             window.location.href = 'https://youtube.com';
+        }
+
+        function opendiscord(){
+            window.location.href = "https://discordapp.com/users/433941600498876420"
         }
     </script>
 </html>
