@@ -6,7 +6,7 @@ html{
     font-size: 62.5px;
     overflow-x: hidden;
     scroll-behavior: smooth;
-
+    background-color: aqua;
 }
 
 .header{
