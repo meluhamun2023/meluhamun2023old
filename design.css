@@ -10,7 +10,7 @@ ul{
     text-decoration: none;
     text-transform: capitalize;
     transition: 0.2s linear;
-    list-style-type:none;
+    list-style-type: none;
     border: none;
     background-color: red;
     font-size: small;
