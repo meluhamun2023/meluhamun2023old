@@ -12,6 +12,7 @@ ul{
     transition: 0.2s linear;
     list-style-type:none;
     border: none;
+    background-color: red;
 
 }
 
