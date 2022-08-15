@@ -7,4 +7,5 @@ p{
 
  li{
     text-decoration: none;
+    text-transform: capitalize;
  }
