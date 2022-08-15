@@ -9,3 +9,7 @@ p{
     text-decoration: none;
     text-transform: capitalize;
  }
+
+ h1{
+   text-decoration: underline;
+ }
