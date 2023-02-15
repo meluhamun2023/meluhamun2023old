@@ -1,0 +1,21 @@
+Required TechStack:
+
+1. Apache Web Server
+2. PhpMyAdmin
+3. PHP
+4. MySQL
+
+Deployment Instructions:
+
+1. Extract all the files
+2. Create a Database named "Agriculture" in PhpMyAdmin
+3. Import the Agriculture.sql file into the database
+4. Deploy the API's the folder named as Agriculture
+4. Deploy the WebApp the folder named as Web
+
+
+Change Password Instructions:
+
+1. Once the Database is deploy in PhpMyAdmin admin can change password directly.
+2. In Agriculture Database select the users Table.
+3. In the users table find the admin user and edit the password.
