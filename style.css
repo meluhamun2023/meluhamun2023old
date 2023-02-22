@@ -11,3 +11,18 @@
     background-size: cover;
     overflow: hidden;
 }
+
+ul{
+    margin: 0;
+    justify-content: space-between;
+    display: flex;
+}
+
+.nav ul li{
+    cursor: pointer;
+}
+
+.nav ui li a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
