@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('Images/Wallpaper2.png');
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navbar{
+    width: 100%;
+    height: 5vh;
+    margin-top: 0px;
+    position: sticky;
+    display: flex;
+}
+
+nav ul{
+    background-color: #4f0d1a;
+    width: 100vw;
+    display: flex;
+    margin-top: 0px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    height: 100%;
+    text-align: center;
+    width: 15vw;
+    padding-top: 10px;
+    transition: 0.25s;
+}
+
+nav ul li:hover{
+    background-color: #fff;
+}
+
+nav ul li:hover a{
+    color: #4f0d1a;
+    font-size: 25px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    transition: 0.25s;
+    font-weight: 600;
+}
+
+.container img{
+    width: 14.5vw;
+    height: 30vh;
+    background: rgba(255, 220, 220,0.5);
+    border: 2px;
+    border-radius: 15%;
+}
+
+.content{
+    display: flex;
+    width: 35vw;
+    height: 80vh;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    margin-left: 40px;
+    flex-direction: column;
+    background: transparent;
+    border: 2px solid #fff;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    padding-top: 15px;
+    color: #fff;
+}
+
+p{
+    text-align: center;
+    padding-top: 3vh;
+    color: #fff;
+    font-weight: 400;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-top: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+    width: 35vw;
+    height: 15vh;
+    bottom: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+    left: 30vw;
+    right: 0;
+    max-width: 35vw;
+}
+
+.buttons label{
+    color: #fff;
+    width: 10vw;
+    padding-right: 20px;
+    font-size: 28px;
+}
+
+.buttons button{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    width: 20vw;
+    height: 7vh;
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    background-color: #4851cf;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    justify-content: center;
+    padding-top: 10px;
+    font-weight: bold;
+    opacity: 0.95;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+#GmailButton{
+    background-color: #c2912f;
+}
+
+#discordbutton:hover{
+    background-color: #5865f2;
+}
+
+#GmailButton:hover{
+    background-color: #eba210;
+}
+
+.buttons{
+    width: 100vw;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutme{
+    width: 40vw;
+    max-width: 40vw;
+    left: 47.5vw;
+    bottom: 45vh;
+    position: absolute;
+}
+
+.aboutme h3{
+    color: #fff;
+    font-weight: bold;
+    font-size: 26px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.aboutme ul li{
+    color: #fff;
+    font-size: 16px;
+    padding-top: 5px;
+    background-color: #4f0d1a;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
