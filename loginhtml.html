@@ -32,11 +32,9 @@
     <h2 id="logo">Meluha MUN</h2>
     <div class="logincontent">
         <h2>Welcome back!</h2>
-        <input type="email" id="emailinput">
+        <input type="email" placeholder="Enter your email.." id="emailinput" required>
+        <p id="errorbox"></p>
         <button id="submit">Log in</button>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
     <script src="login.js"></script>
 </body>
