@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meluha MUN - Login</title>
+    <link rel="stylesheet" href="logincss.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <meta name="google-signin-client_id" content="388338614440-8cih8208itsjadbbqltj1fbsqnm5i6i7.apps.googleusercontent.com">
+</head>
+<body>
+    <div class="sidebackground">
+        <h3>Chat, speak and Interact<br>with the Secretariat Members.</h3>
+        <div class="contentpages">
+            <div class="contentinfo">
+                <img src="checkcircle.png">
+                <p>Easy to use</p>
+            </div>
+            <div class="contentinfo">
+                <img src="time-forward-sixty.png">
+                <p>Active 24/7</p>
+            </div>
+            <div class="contentinfo">
+                <img src="cross-platform.png">
+                <p>Cross platformed</p>
+            </div>
+        </div>
+        <p id="credits">Made by Aakash</p>
+    </div>
+    <h2 id="logo">Meluha MUN</h2>
+    <div class="logincontent">
+        <h2>Welcome back!</h2>
+        <input type="email" id="emailinput">
+        <button id="submit">Log in</button>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #121212;
+    align-items: center;
+    justify-content: center;
+    background-image: url("4kwallpaper.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#heading{
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    width: 20vw;
+    height: 25vh;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    display: flex;
+    font-size: 200%;
+    transition: 1s;
+    margin: 35vh auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.MainPage{
+    width: 40vw;
+    height: 75vh;
+    margin: 12.5vh 30vw;
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0,0.25);
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MainPage ul{
+    list-style-type: none;
+    width: 90%;
+    margin: 0;
+    height: 50%;
+    padding: 0;
+}
+
+.MainPage ul li{
+    background-color: #37b359;
+    color: #fff;
+    cursor: pointer;
+    font-size: 125%;
+    width: 100%;
+    height: 20%;
+    margin: 2.5% auto;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    align-items: center;
+    display: flex;
+}
+
+.MainPage img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.applypage h2{
+    color: #fff;
+    width: 100%;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.contentpage{
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.applypage{
+    align-items: center;
+    display: flex;
+    width: 50vw;
+    height: 80vh;
+    justify-content: center;
+    display: none;
+    background-color: rgba(255, 255,255, 0.2);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    margin: 80px auto;
+}
+
+.applypage iframe{
+    width: 90%;
+    margin: auto 5%;
+    scroll-behavior: smooth;
+}
+
+.regpage{
+    background-color: rgba(255, 255,255, 0.2);
+    backdrop-filter: blur(10px);
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-right: 80px;
+}
+
+.regpage h2{
+    color: #fff;
+    width: 100%;
+    margin-top: 0px;
+    text-align: center;
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+
+#username{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #000;
+    border: none;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0,0.5);
+}
+
+.regpage button{
+    text-decoration: none;
+    cursor: pointer;
+    width: 80%;
+    color: #fff;
+    background-color: rgb(50, 150, 50);
+    border: none;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0,0.8);
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px auto;
+    transition: 0.5s;
+    padding: 1px 3px;
+    font-size: 100%;
+}
+
+#password{
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0,0.5);
+    width: 80%;
+    height: 30px;
+    margin: 10px auto;
+    border: none;
+}
+
+#logo{
+    width: 80px;
+    height: 80px;
+    max-width: 100%;
+    border-radius: 100%;
+    margin: 10px 10px;
+}
+
+#back{
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    margin: 10px 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media (max-width: 768px){
+    .regpage{
+        height: 55vh;
+        width: 80vh;
+    }
+    #heading{
+        width: 80vw;
+        height: 60vh;
+        font-size: 400%;
+    }
+}
