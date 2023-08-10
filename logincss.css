@@ -131,3 +131,21 @@ body{
     top: 95%;
     left: 15px;
 }
+
+#disc{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    font-size: 80%;
+}
+
+@media (max-width: 768px){
+    .sidebackground{
+        display: none;
+    }
+    .logincontent{
+        width: 80%;
+        margin: auto 10%;
+    }
+}
