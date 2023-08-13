@@ -98,11 +98,20 @@ body{
     border-radius: 6px;
 }
 
+#scode{
+    width: 90%;
+    border-radius: 6px;
+    height: 15%;
+    margin: 5px 5%;
+    box-shadow: 1px 2px 6px rgba(0,0,0, 0.3);
+    display: none;
+}
+
 #submit{
     width: 70%;
     margin: 5% 15%;
     border: none;
-    transition: 1s;
+    transition: 0.4s;
     border-radius: 6px;
     color: #fff;
     display: inline;
@@ -111,7 +120,7 @@ body{
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
     height: 15%;
     cursor: pointer;
-    background-color: rgba(100, 200, 120, 0.8);
+    background-color: #49a65b;
 }
 
 #errorbox{
@@ -129,6 +138,7 @@ body{
     color: #fff;
     position: absolute;
     top: 95%;
+    opacity: 0.4;
     left: 15px;
 }
 
@@ -138,6 +148,11 @@ body{
     align-items: center;
     opacity: 0.5;
     font-size: 80%;
+}
+
+#submit:hover{
+    height: 18%;
+    font-size: 140%;
 }
 
 @media (max-width: 768px){
