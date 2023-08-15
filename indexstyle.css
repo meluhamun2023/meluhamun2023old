@@ -72,10 +72,19 @@ body{
     font-size: 150%;
 }
 
+#mologo{
+    display: none;
+    margin: 10px 5px;
+}
+
 @media (max-width: 768px){
     .buttonlist{
         width: 80vw;
         left: 10vw;
+    }
+
+    #mologo{
+        display: block;
     }
 
     body{
