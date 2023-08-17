@@ -12,7 +12,6 @@
 </head>
 <body>
     <h3 id = "title">Hello</h3>
-    <script src="dashboardjs.js"></script>
     <div class="moneyraised">
         <p id="toptext">Fee Collected</p>
         <h1>0.00$</h3>
@@ -21,16 +20,58 @@
         <p id="toptext">People Enrolled</p>
         <h1>0 DS</h1>
     </div>
-    <h2 id="title2">Control Panel</h2>
-    <div class="Applications">
-        <h3>Application Status</h3>
-        <p>Type:</p>
-        <select>
-            <option value="opt1">Delegate Applications</option>
-            <option value="opt1">International Press Applications</option>
-            <option value="opt1">PhotoJournalism Applications</option>
-            <option value="opt1">Allocation List</option>
-        </select>
+    <h2 id="t2">Control Panel</h2>
+    <div class="customs">
+        <div class="applications">
+            <img id="display" src="imgwebsite/app-development.png">
+            <h3>Application Status</h3>
+            <p>Status:</p>
+            <select>
+                <option value="opt1">Delegate Applications</option>
+                <option value="opt2">International Press Applications</option>
+                <option value="opt3">PhotoJournalism Applications</option>
+                <option value="opt4">Allocation List</option>
+            </select>
+        </div>
+        <div class="applications">
+            <img id="display" src="imgwebsite/team (1).png">
+            <h3>Delegates Enrolled</h3>
+            <p>Count:</p>
+            <input type="number" placeholder="Number">
+        </div>
+        <div class="applications">
+            <img id="display" src="imgwebsite/rupee-symbol.png">
+            <h3>Delegation Fees Collected</h3>
+            <p>Rupees</p>
+            <input type="number" placeholder="0">
+        </div>
+        <div class="applications">
+            <img id="display" src="imgwebsite/add-user.png">
+            <h3>Faciliate an account</h3>
+            <p>Gmail:</p>
+            <input type="email" placeholder="example@example.com">
+            <select id ="two">
+                <option value="opt1">Prinicipal</option>
+                <option value="opt2">Teacher Coordinator</option>
+                <option value="opt3">Secretary General</option>
+                <option value="opt4">Director General</option>
+                <option value="opt5">Chief of Staff</option>
+                <option value="opt6">USG Policy</option>
+                <option value="opt7">USG Finance</option>
+                <option value="opt8">USG Logistics</option>
+                <option value="opt9">USG Tech and Design</option>
+                <option value="opt10">USG Marketing</option>
+                <option value="opt11">OC</option>
+            </select>
+        </div>
+        <div class="applications">
+            <img id="display" src="imgwebsite/video-conference.png">
+            <h3>Call for a meeting</h3>
+            <button id="timeselect">Next</button>
+            <p>Date:</p>
+            <input id ="meetingdate" type="date">
+            <input id ="meetingtime" type="time">
+        </div>
     </div>
-</body>
+    <script src="dashboardjs.js"></script>
 </html>

@@ -23,7 +23,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(220, 220, 220);
+    background-color: #fff;
     height: 30vh;
     position: absolute;
     top: 15vh;
@@ -76,4 +76,110 @@ body{
     align-items: center;
     font-size: 85px;
     text-align: center;
+}
+
+#t2{
+    width: 30vw;
+    position: absolute;
+    top: 50vh;
+    left: 40px;
+    justify-content: left;
+    text-align: left;
+    z-index: 2;
+}
+
+.customs{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    top: 56.5vh;
+    position: absolute;
+    align-items: flex-start;
+}
+
+.applications{
+    width: 80vw;
+    border-radius: 6px;
+    background-color: #eceff1;
+    display: flex;
+    text-align: center;
+    margin: 10px auto;
+    align-items: center;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    position: relative;
+    height: 10vh;
+    border: none;
+}
+
+.applications select{
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+}
+
+#display{
+    border-radius: 100%;
+    height: 80%;
+    background-color: #fff;
+    left: 5%;
+    position: absolute;
+    margin: 10% 15px;
+}
+
+.applications h3{
+    font-size: 130%;
+    position: absolute;
+    left: 15%;
+}
+
+.applications p{
+    position: absolute;
+    left: 70%;
+    font-size: 100%;
+}
+
+.applications select{
+    position: absolute;
+    left: 80%;
+    border: none;
+    width: 15%;
+    background-color: #cfd8dc;
+    font-size: 100%;
+    border-radius: 6px;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.applications input{
+    position: absolute;
+    left: 80%;
+    border: transparent;
+    width: 15%;
+    background-color: #cfd8dc;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 100%;
+    height: 80%
+}
+
+#meetingtime{
+    display: none;
+}
+
+#timeselect{
+    cursor: pointer;
+    height: 80%;
+    width: 10%;
+    position: absolute;
+    left: 55%;
+    border-radius: 6px;
+    font-size: 130%;
+    background-color: #129432;
+    color: #fff;
+    display: none;
 }

@@ -3,6 +3,8 @@ const alb = document.getElementById("atr");
 const pja = document.getElementById("pja");
 
 const gba = document.getElementById("ipa");
+
+let canpost = true;
 let statusretireved = null;
 
 async function getdatastatus(id){
