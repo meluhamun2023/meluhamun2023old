@@ -12,6 +12,7 @@
 </head>
 <body>
     <h3 id = "title">Hello</h3>
+    <p id = "role">Developer</p>
     <div class="moneyraised">
         <p id="toptext">Fee Collected</p>
         <h1>0.00$</h3>
@@ -25,13 +26,15 @@
         <div class="applications">
             <img id="display" src="imgwebsite/app-development.png">
             <h3>Application Status</h3>
-            <p>Status:</p>
-            <select>
-                <option value="opt1">Delegate Applications</option>
-                <option value="opt2">International Press Applications</option>
-                <option value="opt3">PhotoJournalism Applications</option>
-                <option value="opt4">Allocation List</option>
+            <p>Type:</p>
+            <select id="selectdab">
+                <option value="1">Delegate Applications</option>
+                <option value="2">International Press Applications</option>
+                <option value="3">PhotoJournalism Applications</option>
+                <option value="4">Allocation List</option>
             </select>
+            <input id="linkfortype" type="text" placeholder="URL">
+            <button id="statusfortype">Open</button>
         </div>
         <div class="applications">
             <img id="display" src="imgwebsite/team (1).png">
@@ -50,7 +53,7 @@
             <h3>Faciliate an account</h3>
             <p>Gmail:</p>
             <input type="email" placeholder="example@example.com">
-            <select id ="two">
+            <select id ="roleinput">
                 <option value="opt1">Prinicipal</option>
                 <option value="opt2">Teacher Coordinator</option>
                 <option value="opt3">Secretary General</option>
@@ -63,6 +66,10 @@
                 <option value="opt10">USG Marketing</option>
                 <option value="opt11">OC</option>
             </select>
+            <input id="gmailinput" type="email" placeholder="Email Id">
+            <input id="scodeenter" type="text" placeholder="Scode">
+            <input id="displaynameinput" type="text" placeholder="Display name">
+            <button id="nextvalue">Next</button>
         </div>
         <div class="applications">
             <img id="display" src="imgwebsite/video-conference.png">

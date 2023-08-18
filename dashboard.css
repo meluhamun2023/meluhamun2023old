@@ -24,6 +24,7 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: #fff;
+    background-color: #cfd8dc;
     height: 30vh;
     position: absolute;
     top: 15vh;
@@ -58,7 +59,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(220, 220, 220);
+    background-color: #cfd8dc;
     height: 30vh;
     position: absolute;
     top: 15vh;
@@ -153,6 +154,21 @@ body{
     height: 80%;
 }
 
+#role{
+    position: absolute;
+    width: 8vw;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-transform: uppercase;
+    color: #fff;
+    top: 9vh;
+    left: 4vw;
+    background-color: #129432;
+    border-radius: 6px;
+}
 .applications input{
     position: absolute;
     left: 80%;
@@ -161,6 +177,7 @@ body{
     background-color: #cfd8dc;
     justify-content: center;
     text-align: center;
+    cursor: pointer;
     justify-content: center;
     border-radius: 6px;
     font-size: 100%;
@@ -182,4 +199,46 @@ body{
     background-color: #129432;
     color: #fff;
     display: none;
+}
+
+#gmail{
+    display: none;
+    position: absolute;
+    left: 50%;   
+}
+
+#statusfortype{
+    position: absolute;
+    height: 80%;
+    background-color: #129432;
+    width: 8%;
+    left: 40%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 130%;
+    color: #fff;
+    border: none;
+    display: flex;
+}
+
+#nextvalue{
+    position: absolute;
+    height: 80%;
+    left: 40%;
+    background-color: #129432;
+    width: 8%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 130%;
+    color: #fff;
+    border: none;
+    display: flex;
+}
+
+#linkfortype{
+    left: 51.5%;
 }
