@@ -3,14 +3,12 @@ const alb = document.getElementById("atr");
 const pja = document.getElementById("pja");
 
 const gba = document.getElementById("ipa");
-
-let canpost = true;
 let statusretireved = null;
 
-async function getdatastatus(id){
+async function getdatastatus(){
     if (statusretireved === null){
         try{
-            const response = await fetch("https://meluhamun.aakashgudivada.repl.co/getstatus?type=" + id)
+            const response = await fetch("https://meluhamun.aakashgudivada.repl.co/g2");
             if (!response.ok){
                 throw new Error("welp")
             }
@@ -33,9 +31,9 @@ alb.addEventListener('click',function(){
 dgabutton.addEventListener("click",async function(){
     dgabutton.textContent = 'Loading..';
     try{
-        const apidata = await getdatastatus("1");
-        if (apidata.status === true){
-            dgabutton.textContent = "Loading.."
+        const apidata = await getdatastatus();
+        if (apidata[1] !== false){
+            window.location.href = apidata[1]
         }else{
             dgabutton.textContent = "Delegate Applications are not open yet!";
         };
@@ -47,9 +45,9 @@ dgabutton.addEventListener("click",async function(){
 pja.addEventListener("click",async function(){
     pja.textContent = 'Loading..';
     try{
-        const apidata = await getdatastatus("3");
-        if (apidata.status === true){
-            pja.textContent = "Loading.."
+        const apidata = await getdatastatus();
+        if (apidata[3] !== false){
+            window.location.href = apidata[3]
         }else{
             pja.textContent = "PhotoJournalism Applications are not open yet!";
         };
@@ -61,9 +59,9 @@ pja.addEventListener("click",async function(){
 gba.addEventListener("click",async function(){
     gba.textContent = 'Loading..';
     try{
-        const apidata = await getdatastatus("2");
-        if (apidata.status === true){
-            gba.textContent = "Loading.."
+        const apidata = await getdatastatus();
+        if (apidata[2] !== false){
+            window.location.href = apidata[2]
         }else{
             gba.textContent = "International Press Applications are not open yet!";
         };
@@ -71,3 +69,7 @@ gba.addEventListener("click",async function(){
         console.log(error);
     }
 });
+
+document.getElementById("ow").addEventListener("click",function(){
+    window.location.href = "mainpage.html";
+})

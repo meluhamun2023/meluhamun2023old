@@ -6,7 +6,7 @@
 
 body{
     justify-content: center;
-    background-image: url("imgwebsite/backgroundimage.png");
+    background-image: url("imgwebsite/backgroundnew.png");
     background-repeat: no-repeat;
     background-size: cover;
     overflow-y: auto;
@@ -19,6 +19,7 @@ body{
     display: flex;
     left: 50%;
     margin-top: 8vh;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.5);
     border-radius: 100%;
     transform: translateX(-50%);
 }
@@ -55,6 +56,7 @@ body{
     background-color: #27873a;
     border-radius: 6px;
     font-size: 130%;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.5);
     color: #fff;
     font-weight: 300px;
     border: none;
@@ -79,17 +81,27 @@ body{
 
 @media (max-width: 768px){
     .buttonlist{
-        width: 80vw;
-        left: 10vw;
+        width: 85vw;
+        left: 7.5vw;
     }
 
     #mologo{
         display: block;
+        opacity: 0.6;
     }
 
+    #heading{
+        width: 90vw;
+        left: 5vw;
+        text-align: center;
+        font-size: 160%;
+    }
     body{
         background-color: #fff;
-        background-image: none;
+        background-image: url("imgwebsite/phonewallpaper.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
     #heading{
         width: 80vw;

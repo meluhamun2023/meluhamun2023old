@@ -18,6 +18,22 @@ body{
     top: 20px;
 }
 
+#role{
+    position: absolute;
+    width: 8vw;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-transform: uppercase;
+    color: #fff;
+    top: 9vh;
+    left: 4vw;
+    background-color: #129432;
+    border-radius: 6px;
+}
+
 .moneyraised{
     width: 20vw;
     justify-content: center;
@@ -154,21 +170,6 @@ body{
     height: 80%;
 }
 
-#role{
-    position: absolute;
-    width: 8vw;
-    height: 35px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    text-transform: uppercase;
-    color: #fff;
-    top: 9vh;
-    left: 4vw;
-    background-color: #129432;
-    border-radius: 6px;
-}
 .applications input{
     position: absolute;
     left: 80%;
@@ -177,7 +178,7 @@ body{
     background-color: #cfd8dc;
     justify-content: center;
     text-align: center;
-    cursor: pointer;
+    cursor: text;
     justify-content: center;
     border-radius: 6px;
     font-size: 100%;
@@ -241,4 +242,41 @@ body{
 
 #linkfortype{
     left: 51.5%;
+}
+
+@media (max-width: 768px){
+    .moneyraised {
+        width: 35vw;
+        left: 10vw;
+        position: absolute;
+    }
+
+    .enrolledpeople{
+        width: 35vw;
+        left: 50vw;
+        position: absolute;
+    }
+
+    #title{
+        width: 60vw;
+        font-size: 150%;
+    }
+    #role{
+        width: 20vw;
+    }
+    #toptext{
+        font-size: 100%;
+    }
+
+    .applications h3{
+        font-size: 110%;
+        width: 40%;
+        left: 25%;
+    }
+    #display{
+        position:absolute;
+        left: 1%;
+        text-align: left;
+        justify-content: left;
+    }
 }

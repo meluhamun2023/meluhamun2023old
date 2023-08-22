@@ -8,37 +8,55 @@ const meetingdate = document.getElementById("meetingdate");
 const meetingtime = document.getElementById("meetingtime");
 const timeselectbutton = document.getElementById("timeselect");
 let datevalue = "";
+let currentindex = 0;
 
 let dictstatus = null;
 
 async function getdictstatus(numbergiven){
-    console.log(numbergiven);
-    try{
-        const response = dictstatus || await fetch("https://meluhamun.aakashgudivada.repl.co/g2")
-        if (response.ok){
-            dictstatus = await response.json();
-            if (dictstatus[numbergiven] === false){
-                document.getElementById("linkfortype").value = "";
-                document.getElementById("statusfortype").textContent = "Not open";
-                document.getElementById("statusfortype").style.background = "#bf2217"
+    currentindex = numbergiven;
+    if (dictstatus === null){
+        try{
+            const response = dictstatus || await fetch("https://meluhamun.aakashgudivada.repl.co/g2")
+            if (response.ok){
+                dictstatus = await response.json();
+                console.log(dictstatus);
+                if (dictstatus[numbergiven] === false){
+                    document.getElementById("linkfortype").value = "";
+                    document.getElementById("statusfortype").textContent = "Not open";
+                    document.getElementById("statusfortype").style.background = "#bf2217"
+                }else{
+                    document.getElementById("linkfortype").value = dictstatus[numbergiven];
+                    document.getElementById("statusfortype").textContent = "Open";
+                    document.getElementById("statusfortype").style.background = "#129432"
+                }
             }else{
-                document.getElementById("linkfortype").value = dictstatus[numbergiven];
-                document.getElementById("statusfortype").textContent = "Open";
-                document.getElementById("statusfortype").style.background = "#129432"
+                console.log("error")
             }
-        }else{
-            console.log("error")
+        }catch(error){
+            console.log(error)
         }
-    }catch(error){
-        console.log(error)
+    }else{
+        if (dictstatus[numbergiven] === false){
+            document.getElementById("linkfortype").value = "";
+            document.getElementById("statusfortype").textContent = "Not open";
+            document.getElementById("statusfortype").style.background = "#bf2217"
+        }else{
+            document.getElementById("linkfortype").value = dictstatus[numbergiven];
+            document.getElementById("statusfortype").textContent = "Open";
+            document.getElementById("statusfortype").style.background = "#129432"
+        }
     }
 }
 
 const dab = document.getElementById("selectdab");
+const enp = document.getElementsByClassName("enrolledpeople")[0];
+const ep = document.getElementById("ep#");
+const mrraised = document.getElementById("mrraised")
 
 dab.addEventListener("input",function(){
     const selindex = dab.options.selectedIndex;
-    getdictstatus(selindex + 1)
+    getdictstatus(selindex + 1);
+    console.log(selindex)
 })
 
 getdictstatus(1);
@@ -94,7 +112,7 @@ async function updatestatus(){
         }else{
             loadedstatus = await response.json();
             ep.textContent = loadedstatus["enrolledpeople"];
-            mrraised.textContent = loadedstatus["moneyraised"]
+            mrraised.textContent = loadedstatus["moneyraised"] + ".00";
         }
     }catch(error){
         console.log(error)
@@ -108,7 +126,10 @@ const mailbox = document.getElementById("mailinput");
 const scodebox = document.getElementById("scodeinput");
 const rolebox = document.getElementById("roleinput");
 let nextaccbox = mailbox;
+const linkfortype = document.getElementById("linkfortype");
+const statsbytypebutton = document.getElementById("statusfortype");
 let prevbox = rolebox;
+const dispx = document.getElementById("displaynameinput");
 
 rolebox.addEventListener("input",function(){
     prevbox = rolebox;
@@ -126,6 +147,33 @@ scodebox.addEventListener("input",function(){
     prevbox = scodebox;
     accsubmit.style.display = "block";
     nextaccbox = mailbox
+})
+
+linkfortype.addEventListener("blur",function(){
+    if (dictstatus !== null){
+        if (dictstatus[currentindex] !== linkfortype.value){
+            statsbytypebutton.textContent = "Saved";
+            let tosend = ""
+            if (linkfortype.value !== ""){
+                tosend = linkfortype.value
+            }else{
+                tosend = "false"
+            }
+            const url = "https://meluhamun.aakashgudivada.repl.co/updateg2?index=" + currentindex.toString() + "&linkvalue=" + tosend;
+            const response = fetch(url);
+        }
+    }
+})
+
+linkfortype.addEventListener("keydown",(event) =>{
+    if (event.key === "Enter"){
+        event.preventDefault();
+        linkfortype.blur()
+    }
+})
+
+statsbytypebutton.addEventListener("click",function(){
+    console.log("ok")
 })
 
 dispx.addEventListener("input",function(){
