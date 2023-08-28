@@ -1,8 +1,14 @@
 const title = document.getElementById("title");
 const cookie = document.cookie;
-let nameou = cookie.split("amnamee=");
-let nameou2 = nameou[1].split("..") || "Admin@meluha.edu.in";
+let nameou = cookie.split("mmunmail=");
+let defaultdata = {
+    mname: "Admin",
+    mailid: "admin@meluha.edu.in",
+    rolename: "Admin"
+}
+let nameou2 =  nameou[1].split("@") || "Admin@meluha.edu.in";
 let nameou3 = "";
+let rolegiven = cookie.split("mmunrole");
 
 const meetingdate = document.getElementById("meetingdate");
 const meetingtime = document.getElementById("meetingtime");
@@ -96,12 +102,14 @@ meetingtime.addEventListener("input",function(){
 })
 
 if (nameou2 === "Admin@meluha.edu.in"){
-    nameou3 = nameou2
+    nameou3 = "Admin"
 }else{
-    nameou3 = (nameou2[0].split(";")[0]).split("@")[0]
+    nameou3 = nameou2[0]
 }
 
 title.textContent = "Hello " + nameou3;
+console.log(rolegiven);
+document.getElementById("role").textContent = rolegiven[1].split(";")[0]
 let loadedstatus = null;
 
 async function updatestatus(){
@@ -153,7 +161,8 @@ linkfortype.addEventListener("blur",function(){
     if (dictstatus !== null){
         if (dictstatus[currentindex] !== linkfortype.value){
             statsbytypebutton.textContent = "Saved";
-            let tosend = ""
+            statsbytypebutton.style.backgroundColor = "#23b839";
+            let tosend = "";
             if (linkfortype.value !== ""){
                 tosend = linkfortype.value
             }else{
@@ -161,6 +170,10 @@ linkfortype.addEventListener("blur",function(){
             }
             const url = "https://meluhamun.aakashgudivada.repl.co/updateg2?index=" + currentindex.toString() + "&linkvalue=" + tosend;
             const response = fetch(url);
+            setTimeout(() => {
+                statsbytypebutton.textContent = "Open";
+                statsbytypebutton.style.backgroundColor = "#129432"
+            }, 4000);
         }
     }
 })
@@ -181,3 +194,65 @@ dispx.addEventListener("input",function(){
     accsubmit.style.display = "block";
     nextaccbox = mailbox
 })
+
+const feebox = document.getElementById("fcb");
+const dbox = document.getElementById("dcb");
+
+feebox.addEventListener("keydown",function(event){
+    if (event.key === "Enter"){
+        event.preventDefault();
+        feebox.blur()
+    }
+})
+
+feebox.addEventListener("blur", function() {
+    try {
+        fetch("https://meluhamun.aakashgudivada.repl.co/uos?linkrel=moneyraised&val=" + feebox.value.toString())
+            .then(response => {
+                if (response.ok) {
+                    feebox.value = "";
+                    updatestatus();
+                    alert("Fees collected data updated!")
+                    return response.json();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+dbox.addEventListener("keydown",function(event){
+    if (event.key === "Enter"){
+        event.preventDefault();
+        dbox.blur()
+    }
+})
+
+dbox.addEventListener("blur", function() {
+    if (dbox.value === ""){
+        return
+    }
+    try {
+        fetch("https://meluhamun.aakashgudivada.repl.co/uos?linkrel=enrolledpeople&val=" + dbox.value.toString())
+            .then(response => {
+                if (response.ok) {
+                    dbox.value = "";
+                    updatestatus();
+                    alert("Delegate count data updated!")
+                    return response.json();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+    } catch (error) {
+        console.log(error);
+    }
+});

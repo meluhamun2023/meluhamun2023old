@@ -2,15 +2,42 @@ const errortext = document.getElementById("errorbox");
 const emailinput = document.getElementById("emailinput");
 const subbutton = document.getElementById("submit");
 const pcode = document.getElementById("scode");
-let username = "Guest12";
+let rolename = "Admin";
 let prequired1 = "";
 let mailgiven = "";
-const getcookiefirst = document.cookie;
-if (getcookiefirst !== ""){
-    const splitedstring = getcookiefirst.split("amnamee");
-    if (splitedstring.length >= 2){
-        window.location.href = "dashboard.html"
+
+let defaultdata = {
+    mailid: "admin@meluha.edu.in",
+    rolename: "Admin"
+}
+
+async function setinitdata(){
+    document.cookie = "mmunmail=" + mailgiven + "; expires=25 Dec 2024 23:59:59 GMT; path=/";
+    document.cookie = "mmunrole=" + rolename + "; expires=25 Dec 2024 23:59:59 GMT; path=/";
+    return true
+}
+
+async function getcookies(){
+    const cookie = document.cookie;
+    const splitedcookie = cookie.split(";");
+    let selcookie = null
+    for (let cookienum = 0; cookienum < splitedcookie.length;cookienum++){
+        const currentcookie = splitedcookie[cookienum].trim();
+        if (currentcookie.startsWith("mmunmail=")){
+            selcookie = currentcookie.substring(9)
+        }
     }
+    console.log(selcookie);
+    if (selcookie !== null){
+        return selcookie
+    }else{
+        return null
+    }
+}
+
+if (getcookies() !== null){
+    console.log(getcookies());
+    document.location.href = "dashboard.html"
 }
 
 function showerror(errorname,cleartext){
@@ -23,7 +50,7 @@ function showerror(errorname,cleartext){
     subbutton.style.backgroundColor = "#49a65b"
 }
 
-subbutton.addEventListener("click", function(){
+subbutton.addEventListener("click", async function(){
     if (emailinput.value !== "" && prequired1 === ""){
         let splittedvalues = (emailinput.value).split("@");
         if (splittedvalues.length >= 2){
@@ -31,7 +58,7 @@ subbutton.addEventListener("click", function(){
                 console.log("oka");
                 errortext.style.display = "none";
                 subbutton.textContent = "Validating..";
-                fetch("https://meluhamun.aakashgudivada.repl.co/checkvalid?username=" + emailinput.value)
+                fetch("https://meluhamun.aakashgudivada.repl.co/checkvalid?mailid=" + emailinput.value)
                 .then(response =>{
                     return response.json()
                 })
@@ -40,7 +67,7 @@ subbutton.addEventListener("click", function(){
                         subbutton.textContent = "Log in";
                         pcode.style.display = "block";
                         prequired1 = data.password || "0911";
-                        username = data.dname;
+                        rolename = data.dname;
                         mailgiven = emailinput.value
                     }else{
                         showerror("No account found",true);
@@ -59,11 +86,17 @@ subbutton.addEventListener("click", function(){
                 showerror("Incorrect password",false);
             }else{
                 subbutton.textContent = "Welcome back..";
-                document.cookie = "amnamee=" + mailgiven + "; expires=25 Dec 2024 23:59:59 GMT; path=/";
-                document.cookie = "adnamee=" + username + "; expires=25 Dec 2024 23:59:59 GMT; path=/";
-                setTimeout(() => {
-                    window.location.href = "dashboard.html"
-                }, 1000);
+                defaultdata["mailid"] = mailgiven;
+                defaultdata["rolename"] = rolename;
+                const response = await setinitdata();
+                if (response === true){
+                    subbutton.textContent = "Welcome back..";
+                    setTimeout(() => {
+                        window.location.href = "dashboard.html"
+                    }, 800);
+                }else{
+                    subbutton.textContent = "Try again later";
+                }
             }
         }
     }else{
