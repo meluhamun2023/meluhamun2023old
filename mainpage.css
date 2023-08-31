@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Fira Sans",sans-serif;
+    overflow-x: hidden;
 }
 
 .topcontainer{
@@ -50,4 +51,166 @@ body{
 .buttonlist button:hover{
     text-decoration: underline;
     font-size: 130%;
+}
+
+.publicimg{
+    width: 100vw;
+    height: 70vh;
+    position: absolute;
+    margin-top: 1vh;
+    background-image: url("imgwebsite/backgroundhtml3.png");
+    background-size: cover;
+    background-repeat: no-repeat;   
+    justify-content: center;
+    display: flex;
+    box-shadow: 1px 2px 4px #000;
+}
+
+.publicimg h1{
+    color: #fff;
+    font-size: 80px;
+    width: 50vw;
+    position: absolute;
+    left: 25%;
+    text-align: center;
+    justify-content: center;
+    top: 18%;
+}
+
+.publicimg h2{
+    color: #fff;
+    display: flex;
+}
+
+#toptext{
+    position: absolute;
+    top: 10%;
+    display: flex;
+    font-size: 170%;
+}
+
+#bottomtext{
+    position: absolute;
+    display: flex;
+    top: 55%;
+    font-size: 180%;
+}
+
+.bottombar{
+    height: 15vh;
+    background-color: #dcdcdc;
+    width: 100vw;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    top: 210%;
+}
+
+.bottombar h3{
+    position: absolute;
+    text-align: center;
+    left: 25%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    font-size: 170%;
+    margin: 0px;
+    justify-content: center;
+}
+
+.bottombar img{
+    position: absolute;
+    left: 65%;
+    width: 170px;
+    height: 90%;
+}
+
+.contentinfohome{
+    width: 70vw;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    backdrop-filter: blur(6px);
+    top: 82%;
+    left: 15%;
+    height: 25vh;
+    display: flex;
+    margin-bottom: 15vh;
+}
+
+.contentinfohome h2{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    font-size: 150%;
+    height: 20%;
+}
+
+.contentinfohome h3{
+    position: absolute;
+    top: 20%;
+    font-size: 150%;
+    opacity: 0.7;
+    display: flex;
+}
+
+.lettercontent{
+    width: 70vw;
+    height: 80vh;
+    top: 120vh;
+    left: 15%;
+    background-color: rgba(100, 180, 0, 0.5);
+    border-radius: 6px;
+    backdrop-filter: blur(6px);
+    display: flex;
+    position: absolute;
+    box-shadow: 0px 1px 6px #000;
+}
+
+.lettercontent h3{
+    width: 60%;
+    display: flex;
+    margin-left: 5%;
+}
+
+.lettercontent img{
+    width: 30%;
+    position: absolute;
+    left: 68%;
+    top: 5%;
+}
+
+@media (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .topcontainer{
+        width: 100vw;
+        height: 5vh;
+    }
+    #logo{
+        margin-left: 10px;
+    }
+
+    .buttonlist{
+        left: 80px;
+        width: 80vw;
+        text-decoration: none;
+        top: 5px;
+    }
+
+    .bottombar{
+        top: 210vh;
+        position: absolute;
+    }
+
+    .publicimg{
+        width: 100vw;
+        height: 40vh;
+    }
+    .publicimg h1{
+        width: 80vw;
+        height: 50%;
+        left: 10%;
+    }
 }
